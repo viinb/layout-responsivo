@@ -1,0 +1,132 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-image: url("https://media1.tenor.com/m/hMIby3S0bYcAAAAC/the-knight-hollow-knight.gif");
+  background-size: 100% 100%;
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+
+.top {
+  height: 20%;
+  /* ocupa 15% da altura da tela */
+  min-height: 80px;
+  /* mínimo para não ficar pequena */
+  max-height: 150px;
+  /* máximo para não ficar gigante */
+  border: 2px solid #000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.top img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  /* mantém proporção da imagem e preenche o box */
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.side {
+  width: 240px;
+  border: 2px solid #000;
+  background-color: rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+
+.side img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  /* mantém proporção da imagem e preenche o box */
+}
+
+.center {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* sempre 2 colunas */
+  grid-template-rows: repeat(2, 1fr);
+  /* sempre 2 linhas */
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  max-width: 250px;
+  /* limita tamanho máximo */
+  max-height: 250px;
+  aspect-ratio: 1 / 1;
+  /* mantém quadrado */
+  border: 2px solid #000;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  /* mantém proporção da imagem e preenche o box */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .top {
+    height: 100px;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .side {
+    width: 100%;
+    height: 150px;
+  }
+
+  .center {
+    grid-template-columns: 1fr;
+    /* 1 por linha no mobile */
+    grid-auto-rows: 150px;
+    gap: 15px;
+  }
+
+  .box {
+    max-width: 100%;
+    height: 100%;
+  }
+}
